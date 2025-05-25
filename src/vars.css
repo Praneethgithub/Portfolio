@@ -1,4 +1,4 @@
-:root{
+:root {
     /*colours*/
     --color-text: #fff;
     --color-primary: #576cbc;
@@ -7,6 +7,5 @@
     --color-bg: #04152d;
 
     /*Fonts*/
-    --font-roboto:"Roboto";
-
+    --font-roboto: "Roboto";
 }

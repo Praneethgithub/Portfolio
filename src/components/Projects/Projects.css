@@ -1,0 +1,144 @@
+.projects {
+    padding: 60px 10%;
+    color: var(--color-text);
+}
+
+.projects h2 {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    text-align: center;
+    background: linear-gradient(90deg, #fff 0%, #a8b2d1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    padding-right: 30px;
+    transition: color 0.3s ease;
+}
+
+.projects h2:hover {
+    color: #007bff;
+}
+
+.projects h2::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+.projects h2.collapsed::after {
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+.projects-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+}
+
+.project-header {
+    margin-bottom: 1.5rem;
+}
+
+.project-header h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.tech-stack {
+    font-size: 1.1rem;
+    color: var(--color-text);
+    opacity: 0.9;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+}
+
+.project-details {
+    list-style: none;
+    padding: 0;
+}
+
+.project-details li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.project-details li:before {
+    content: "•";
+    color: var(--color-primary);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.project-link {
+    display: inline-block;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+    padding-left: 0;
+    position: relative;
+}
+
+.project-link::before {
+    display: none;
+}
+
+.project-link:hover {
+    color: var(--color-secondary);
+    transform: translateX(5px);
+}
+
+@media screen and (max-width: 768px) {
+    .projects {
+        padding: 40px 5%;
+    }
+
+    .project-item {
+        padding: 1.5rem;
+    }
+
+    .project-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .tech-stack {
+        font-size: 0.9rem;
+        padding: 0.25rem 0.6rem;
+    }
+} 

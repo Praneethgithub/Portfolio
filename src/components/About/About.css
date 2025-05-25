@@ -1,0 +1,210 @@
+.experience {
+    padding: 60px 10%;
+    color: var(--color-text);
+}
+
+.experience h2 {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    text-align: center;
+    background: linear-gradient(90deg, #fff 0%, #a8b2d1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    padding-right: 30px;
+    transition: color 0.3s ease;
+}
+
+.experience h2:hover {
+    color: #007bff;
+}
+
+.experience h2::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+.experience h2.collapsed::after {
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+.experience-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.experience-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+}
+
+.experience-header {
+    margin-bottom: 1.5rem;
+}
+
+.experience-header h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.company {
+    font-size: 1.1rem;
+    color: var(--color-text);
+    opacity: 0.9;
+    margin-right: 1rem;
+}
+
+.duration {
+    font-size: 1rem;
+    color: var(--color-text);
+    opacity: 0.7;
+}
+
+.experience-details {
+    list-style: none;
+    padding: 0;
+}
+
+.experience-details li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.experience-details li:before {
+    content: "•";
+    color: var(--color-primary);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .experience {
+        padding: 40px 5%;
+    }
+
+    .experience-item {
+        padding: 1.5rem;
+    }
+
+    .experience-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .company, .duration {
+        display: block;
+        margin-bottom: 0.3rem;
+    }
+}
+
+.skills {
+    padding: 60px 10%;
+    color: var(--color-text);
+}
+
+.skills h2 {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    text-align: center;
+    background: linear-gradient(90deg, #fff 0%, #a8b2d1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.skills-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skills-category {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.skills-category:hover {
+    transform: translateY(-5px);
+}
+
+.skills-category h3 {
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.skills-category p {
+    line-height: 1.6;
+    opacity: 0.9;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skills-category p::before {
+    content: "";
+    display: none;
+}
+
+.skills-category p span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.skills-category p span:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+    .skills {
+        padding: 40px 5%;
+    }
+
+    .skills-content {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-category {
+        padding: 1.5rem;
+    }
+
+    .skills-category p span {
+        font-size: 0.85rem;
+        padding: 0.25rem 0.6rem;
+    }
+} 
