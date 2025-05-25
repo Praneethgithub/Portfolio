@@ -10,7 +10,7 @@ export const Experience = () => {
     <section className="experience">
       <h2>Experience</h2>
       <div className="experience-content">
-        <div className="experience-item parallax">
+        <div className="experience-item">
           <div className="experience-header">
             <div className="header-content">
               <img src={HireArcLogo} alt="Hire Arc Logo" className="company-logo" />
@@ -29,7 +29,7 @@ export const Experience = () => {
             <li>Monitored product KPIs(user engagement, error rates), driving a 33% improvement in performance and reducing downtime by 15%.</li>
           </ul>
         </div>
-        <div className="experience-item parallax">
+        <div className="experience-item">
           <div className="experience-header">
             <div className="header-content">
               <img src={AppleLogo} alt="Apple Logo" className="company-logo" />
@@ -47,7 +47,7 @@ export const Experience = () => {
             <li>Enhanced Customer Experience (CXO) by analyzing user behavior data to redirect traffic toward more cost-effective solutions, improving efficiency and reducing operational costs.</li>
           </ul>
         </div>
-        <div className="experience-item parallax">
+        <div className="experience-item">
           <div className="experience-header">
             <div className="header-content">
               <img src={AmazonLogo} alt="Amazon Logo" className="company-logo" />
@@ -63,7 +63,7 @@ export const Experience = () => {
             <li>Consolidated and analyzed employee feedback using Sales force CRM to support HR decision-making and streamline operational workflows.</li>
           </ul>
         </div>
-        <div className="experience-item parallax">
+        <div className="experience-item">
           <div className="experience-header">
             <div className="header-content">
               <img src={GenZLogo} alt="GenZ Marketing Logo" className="company-logo" />

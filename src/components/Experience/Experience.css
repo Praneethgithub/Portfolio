@@ -2,8 +2,6 @@
     padding: 60px 10%;
     color: var(--color-text);
     position: relative;
-    perspective: 1000px;
-    transform-style: preserve-3d;
 }
 
 .experience h2 {
@@ -16,7 +14,6 @@
     position: relative;
     padding-right: 30px;
     transition: all 0.3s ease;
-    transform: translateZ(0);
 }
 
 .experience h2:hover {
@@ -67,15 +64,8 @@
     border-radius: 12px;
     padding: 2rem;
     transition: all 0.5s ease;
-    transform-style: preserve-3d;
-    will-change: transform;
     position: relative;
     animation: slideIn 0.5s ease-out;
-}
-
-.experience-item.parallax {
-    transform: translateZ(0);
-    transition: transform 0.2s ease-out;
 }
 
 .experience-item:hover {
