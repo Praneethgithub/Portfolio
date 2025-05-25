@@ -12,6 +12,7 @@ export const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -22,23 +23,29 @@ export const Contact = () => {
     setLoading(true);
     setError(false);
     setSuccess(false);
+    setErrorMessage('');
 
     try {
-      await emailjs.sendForm(
-        'service_w5dc8u8', // Replace with your Service ID
-        'template_1ia9jri', // Replace with your Template ID
+      const result = await emailjs.sendForm(
+        'service_w5dc8u8',
+        'template_0rg4y49',
         formRef.current,
-        'C2wHbL7TYcbG4bw2P' // Replace with your Public Key
+        'C2wHbL7TYcbG4bw2P'
       );
 
-      setSuccess(true);
-      setForm({
-        name: '',
-        email: '',
-        message: '',
-      });
+      if (result.text === 'OK') {
+        setSuccess(true);
+        setForm({
+          name: '',
+          email: '',
+          message: '',
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
     } catch (error) {
       setError(true);
+      setErrorMessage(error.message || 'Failed to send message. Please try again.');
       console.error('Error sending email:', error);
     } finally {
       setLoading(false);
@@ -122,7 +129,7 @@ export const Contact = () => {
           )}
           {error && (
             <p className="error-message">
-              <span className="error-icon">!</span> Failed to send message. Please try again.
+              <span className="error-icon">!</span> {errorMessage}
             </p>
           )}
         </form>
